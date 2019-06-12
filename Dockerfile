@@ -1,6 +1,5 @@
-FROM ubuntu:18.04
-RUN apt-get update \
-    && apt-get install -y curl \
-    && rm -rf /var/lib/apt/lists/*
+FROM alpine:3.7
+
+RUN apk add curl
 
 ENTRYPOINT ["curl", "https://ifconfig.co"]
